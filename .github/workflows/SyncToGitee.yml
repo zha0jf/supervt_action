@@ -18,7 +18,7 @@ jobs:
         dst_key: secrets.GITEE_PRIVATE_KEY  # the push private key for gitee
         dst_token: secrets.GITEE_TOKEN  # the user token for gitee
         account_type: user  # the src,dst stand for user
-        clone_style: "https"  # use https to sync project
+        clone_style: "ssh"  # use ssh to sync project
         debug: true  # show all commands
         force_update: false  # force to overwrite the target repo
         static_list: "wiki-backup"  # the repo list to be synced, use "," 
