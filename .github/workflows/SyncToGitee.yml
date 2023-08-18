@@ -1,0 +1,25 @@
+name: Sync Github Repos To Gitee
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+
+    - name: Sync Github Repos To Gitee 
+      uses: zha0jf/hub-mirror-action@v1.3.0 # use forked project 
+      with:
+        src: github/Hargeek  # the source user on github
+        dst: gitee/ssgeek  # the target user on gitee
+        dst_key: secrets.GITEE_PRIVATE_KEY  # the push private key for gitee
+        dst_token:  secrets.GITEE_TOKEN  # the user token for gitee
+        account_type: user  # the src,dst stand for user
+        clone_style: "https"  # use https to sync project
+        debug: true  # show all commands
+        force_update: true  # force to overwrite the target repo
+        static_list: ""  # the repo list to be synced, use "," 
+        timeout: '600s'  # git timeout time, when timeout, will retry
