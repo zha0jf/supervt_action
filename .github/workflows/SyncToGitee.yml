@@ -15,8 +15,8 @@ jobs:
       with:
         src: github/zha0jf  # the source user on github
         dst: gitee/zjfssd  # the target user on gitee
-        dst_key: secrets.GITEE_PRIVATE_KEY  # the push private key for gitee
-        dst_token: secrets.GITEE_TOKEN  # the user token for gitee
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} # the push private key for gitee
+        dst_token: ${{ secrets.GITEE_TOKEN }} # the user token for gitee
         account_type: user  # the src,dst stand for user
         clone_style: "ssh"  # use ssh to sync project
         debug: true  # show all commands
